@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-apis-docs:
+  generate-api-docs:
     uses: ./.github/workflows/generate-api-docs.yml
     secrets: inherit
   # Build job
