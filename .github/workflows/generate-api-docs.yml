@@ -60,5 +60,5 @@ jobs:
       - name: Upload generated docs 
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: api-docs
           path: ref/
