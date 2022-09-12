@@ -26,6 +26,7 @@ jobs:
     secrets: inherit
   # Build job
   build:
+    needs: generate-api-docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

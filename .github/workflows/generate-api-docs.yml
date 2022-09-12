@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: redhat-appstudio/service-provider-integration-operator.git
-          path: service-provider-integration-operator
+          path: service-provider
       
       - name: Checkout GitOps
         uses: actions/checkout@v3
