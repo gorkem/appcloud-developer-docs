@@ -43,12 +43,11 @@ jobs:
           path: kcp
       
       - name: Install crd-ref-gen
-        uses: jaxxstorm/action-install-gh-release@v1.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: supplypike/setup-bin@v1
         with:
-          repo: elastic/crd-ref-docs
-          tag: v0.0.8
+          uri: 'https://github.com/elastic/crd-ref-docs/releases/download/v0.0.8/crd-ref-docs'
+          name: 'crd-ref-gen'
+          version: '0.0.8'
 
       - name: Generate application-service API docs
         run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=./ref/application-service.md --renderer markdown --source-path=application-service/api/v1alpha1
