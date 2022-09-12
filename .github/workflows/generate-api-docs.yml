@@ -42,11 +42,11 @@ jobs:
           repository: kcp-dev/kcp
           path: kcp
       
-      - name: Install crd-ref-gen
+      - name: Install crd-ref-docs
         uses: supplypike/setup-bin@v1
         with:
           uri: 'https://github.com/elastic/crd-ref-docs/releases/download/v0.0.8/crd-ref-docs'
-          name: 'crd-ref-gen'
+          name: 'crd-ref-docs'
           version: '0.0.8'
 
       - name: Generate application-service API docs
