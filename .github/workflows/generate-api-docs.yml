@@ -52,4 +52,4 @@ jobs:
           version: '0.0.8'
 
       - name: Generate application-service API docs
-        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=$GITHUB_WORKSPACE/ref/application-service.md --renderer markdown --source-path=$GITHUB_WORKSPACE/crd-temp/application-service/api/v1alpha1
+        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=./ref/application-service.md --renderer markdown --source-path=$GITHUB_WORKSPACE/crd-temp/application-service/api/v1alpha1
