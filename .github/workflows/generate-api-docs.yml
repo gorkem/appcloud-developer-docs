@@ -58,10 +58,10 @@ jobs:
         run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/application-service.md --renderer=markdown --source-path=crd-temp/application-service/api/v1alpha1
 
       - name: Generate GitOps service API docs
-        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/gitops.md --renderer=markdown --source-path=crd-temp/managed-gitops/backend/apis/managed-gitops/v1alpha1
+        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/gitops.md --renderer=markdown --source-path=crd-temp/managed-gitops/backend-shared/apis/managed-gitops/v1alpha1
 
       - name: Generate kcp API docs
-        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/kcp.md --renderer=markdown --source-path=crd-temp/pkg/apis
+        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/kcp.md --renderer=markdown --source-path=crd-temp/kcp/pkg/apis
 
       - name: Upload generated docs 
         uses: actions/upload-artifact@v3
