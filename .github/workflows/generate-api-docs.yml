@@ -27,19 +27,19 @@ jobs:
       - name: Checkout SPI
         uses: actions/checkout@v3
         with:
-          repository: redhat-appstudio/service-provider-integration-operator.git
+          repository: redhat-appstudio/service-provider-integration-operator
           path: service-provider
       
       - name: Checkout GitOps
         uses: actions/checkout@v3
         with:
-          repository: redhat-appstudio/managed-gitops.git
+          repository: redhat-appstudio/managed-gitops
           path: managed-gitops
       
       - name: Checkout KCP
         uses: actions/checkout@v3
         with:
-          repository: kcp-dev/kcp.git 
+          repository: kcp-dev/kcp
           path: kcp
       
       - name: Install crd-ref-gen
