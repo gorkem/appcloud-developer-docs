@@ -4,13 +4,9 @@ name: generate-api-docs
 
 # Controls when the workflow will run
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  workflow_call:
+    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -46,13 +42,11 @@ jobs:
           repository: kcp-dev/kcp.git 
           path: kcp
       
-      
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install crd-ref-gen
+        uses: jaxxstorm/action-install-gh-release@v1.7.1
+        with:
+          repo: elastic/crd-ref-docs
+          tag: v0.0.8
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Generate application-service API docs
+        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=./ref/application-service.md --renderer markdown --source-path=application-service/api/v1alpha1
