@@ -56,3 +56,9 @@ jobs:
 
       - name: Generate application-service API docs
         run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=ref/application-service.md --renderer=markdown --source-path=crd-temp/application-service/api/v1alpha1
+
+      - name: Upload generated docs 
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: ref/
