@@ -25,7 +25,7 @@ jobs:
       - name: Checkout Application Service
         uses: actions/checkout@v3
         with:
-          path: $CRD_GEN_TEMP/application-service
+          path: crd-temp/application-service
           repository: redhat-appstudio/application-service
 
       - name: Checkout SPI
