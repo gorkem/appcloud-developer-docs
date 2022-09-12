@@ -14,7 +14,8 @@ jobs:
   generate-docs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env: 
+      CRD_GEN_TEMP: $GITHUB_WORKSPACE/crd-temp
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: checkout docs repo 
@@ -24,7 +25,7 @@ jobs:
       - name: Checkout Application Service
         uses: actions/checkout@v3
         with:
-          path: application-service
+          path: $CRD_GEN_TEMP/application-service
           repository: redhat-appstudio/application-service
 
       - name: Checkout SPI
@@ -53,4 +54,4 @@ jobs:
           version: '0.0.8'
 
       - name: Generate application-service API docs
-        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=./ref/application-service.md --renderer markdown --source-path=$GITHUB_WORKSPACE/application-service/api/v1alpha1
+        run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=$GITHUB_WORKSPACE/ref/application-service.md --renderer markdown --source-path=$CRD_GEN_TEMP/application-service/api/v1alpha1
