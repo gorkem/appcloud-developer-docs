@@ -48,6 +48,9 @@ jobs:
           uri: 'https://github.com/elastic/crd-ref-docs/releases/download/v0.0.8/crd-ref-docs'
           name: 'crd-ref-docs'
           version: '0.0.8'
+          
+      - name: checkout docs repo 
+        uses: actions/checkout@v3
 
       - name: Generate application-service API docs
         run: crd-ref-docs --log-level=ERROR --config=scripts/config.yaml --output-path=./ref/application-service.md --renderer markdown --source-path=application-service/api/v1alpha1
