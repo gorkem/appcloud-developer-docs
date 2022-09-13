@@ -1,3 +1,6 @@
+---
+title: API Reference
+---
 # API Reference
 
 ## AppStudio 
@@ -9,4 +12,4 @@
 
 ## Control Plane
 
-- [KCP](./kcp.md)
+- [KCP](kcp.md)
